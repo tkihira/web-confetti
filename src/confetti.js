@@ -1,5 +1,5 @@
 const config = {
-    confettiColors: ["rgb(232,65,39)", "rgb(245,204,74)", "rgb(237,136,58)", "#fff"],
+    confettiColors: ["#e84127", "#f5cc4a", "#ed883a", "#ffffff"],
     initialRadius: 0.3,
     initialSpeed: 0.13,
     gravity: 0.0025,

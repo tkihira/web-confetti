@@ -1,0 +1,16 @@
+{
+  "name": "confetti",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/confetti.js",
+  "scripts": {
+    "build": "npx webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}

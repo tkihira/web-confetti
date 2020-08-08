@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>confetti</title>
+        <script src="confetti_web_min.js"></script>
+        <script>
+            onload = () => {
+                Confetti.start(document.getElementById('canvas'), 300);
+                (function rAF () {
+                    Confetti.tick();
+                    requestAnimationFrame(rAF);
+                })();
+            };
+        </script>
+    </head>
+    <body style="background-color: #888888">
+        <canvas id="canvas" width=400 height=600 style="position: absolute; pointer-events: none;"></canvas>
+        <input type="button" value="fire" onclick="javascript:Confetti.start(document.getElementById('canvas'), 300)">
+    </body>
+</html>

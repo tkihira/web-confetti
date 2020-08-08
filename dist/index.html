@@ -13,6 +13,7 @@
         </script>
     </head>
     <body style="background-color: #888888">
-        <canvas id="canvas" width=400 height=600></canvas>
+        <canvas id="canvas" width=400 height=600 style="position: absolute; pointer-events: none;"></canvas>
+        <input type="button" value="fire" onclick="javascript:Confetti.start(document.getElementById('canvas'), 300)">
     </body>
 </html>

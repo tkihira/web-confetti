@@ -19,7 +19,6 @@ const setConfig = (setting) => {
 
 const tick = () => {
     if(!availableCofetti || !ctx) {
-        confettiList.length = 0;
         return false;
     }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -80,6 +79,7 @@ const tick = () => {
         confettiList.length = 0;
         return false;
     }
+    return true;
 };
 
 const start = (_canvas, num = 300) => {

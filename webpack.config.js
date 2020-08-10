@@ -6,7 +6,7 @@ const main = {
         main: ['./src/confetti.js'],
     },
     output: {
-        filename: 'confetti_web_min.js',
+        filename: 'web_confetti_min.js',
         library: 'Confetti',
         libraryTarget: 'var',
         path: path.resolve(__dirname, 'dist'),

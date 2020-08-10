@@ -11,10 +11,12 @@ https://tkihira.github.io/web-confetti/index.html
 
 ## Install
 
-If you're planning to use this directly in the browser, you may use `dist/confetti_web_min.js`
+If you're planning to use this directly in the browser, you may use `dist/web_confetti_min.js`
 ```
-<script src='confetti_web_min.js'></script>
+<script src='web_confetti_min.js'></script>
 ```
+[jsdelivr.net](https://www.jsdelivr.com/) will help you use CDN: https://cdn.jsdelivr.net/npm/web-confetti@1.0.3/dist/web_confetti_min.js
+
 You may find how to use in `dist/index.html`
 
 If you're using something like WebPack, you can install through npm
@@ -30,7 +32,7 @@ This function initializes internal status with the canvas
 
 ### tick()
 
-You need to call `tick` by yourself. If you don't understand the meaning, simply put these codes.
+You need to call `tick` by yourself. If you don't understand the meaning, just simply put these codes somewhere in your script tag.
 ```
 (function rAF () {
     Confetti.tick();

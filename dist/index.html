@@ -1,19 +1,27 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>confetti</title>
-        <script src="web_confetti_min.js"></script>
-        <script>
-            onload = () => {
-                Confetti.start(document.getElementById('canvas'), 300);
-                (function rAF () {
-                    Confetti.tick();
-                    requestAnimationFrame(rAF);
-                })();
+
+<head>
+    <title>web-confetti</title>
+    <script src="web_confetti_min.js"></script>
+    <script>
+        onload = () => {
+            const confetti = new Confetti();
+            window.fire = () => {
+                confetti.start(document.getElementById('canvas'), 300);
             };
-        </script>
-    </head>
-    <body style="background-color: #888888">
-        <canvas id="canvas" width=400 height=600 style="position: absolute; pointer-events: none;"></canvas>
-        <input type="button" value="fire" onclick="javascript:Confetti.start(document.getElementById('canvas'), 300)">
-    </body>
+            fire();
+            (function rAF() {
+                confetti.tick();
+                requestAnimationFrame(rAF);
+            })();
+        };
+    </script>
+</head>
+
+<body style="background-color: #888888">
+    <canvas id="canvas" width=400 height=600 style="position: absolute; pointer-events: none;"></canvas>
+    <input type="button" value="fire" onclick="javascript:fire();">
+</body>
+
 </html>

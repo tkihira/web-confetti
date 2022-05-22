@@ -11,38 +11,49 @@ https://tkihira.github.io/web-confetti/index.html
 
 ## Install
 
-If you're planning to use this directly in the browser, you may use `dist/web_confetti_min.js`
-```
-<script src='web_confetti_min.js'></script>
-```
-[jsdelivr.net](https://www.jsdelivr.com/) will help you use CDN: https://cdn.jsdelivr.net/npm/web-confetti@1.0.3/dist/web_confetti_min.js
-
-You may find how to use in `dist/index.html`
-
-If you're using something like WebPack, you can install through npm
 ```
 npm install web-confetti --save
 ```
 
+or, if you're planning to use this directly in the browser, you may use `dist/web_confetti_min.js`
+```
+<script src='web_confetti_min.js'></script>
+```
+[jsdelivr.net](https://www.jsdelivr.com/) will help you use CDN: https://cdn.jsdelivr.net/npm/web-confetti@2.0.0/dist/web_confetti_min.js
+
 ## API
 
-### start(Canvas element, particleCount = 100)
+### Constructor(setting = null)
 
-This function initializes internal status with the canvas
+```
+const confetti = new Confetti();
+```
 
-### tick()
+`setting` is optional. `setting` will be passed to `Confetti.prototype.setSetting`.
 
-You need to call `tick` by yourself. If you don't understand the meaning, just simply put these codes somewhere in your script tag.
+### Confetti.prototype.start(Canvas element, particleCount = 300)
+
+Create new particles in the `element` canvas.
+
+### Confetti.prototype.tick()
+
+Update one frame in the canvas which you set in `start` function. The canvas will be erased every time you call `tick`.
+
+This function will return `false` if there's no confetti (or if errors, such as not calling `start`). Otherwise, return `true`.
+
+You need to call `tick` by yourself, usually in `requestAnimationFrame` function like below.
+
 ```
 (function rAF () {
-    Confetti.tick();
+    confetti.tick();
     requestAnimationFrame(rAF);
 })();
 ```
 
-### setConfig(option)
+### Confetti.prototype.setSetting(setting)
 
-You can set config with this function.
+You can overwrite settings with this function. Below are the default settings.
+
 ```
 {
     confettiColors: ["#e84127", "#f5cc4a", "#ed883a", "#ffffff"],
@@ -53,6 +64,13 @@ You can set config with this function.
     confettiAspectRatio: 1.618
 }
 ```
+
+For example, if you want to change the confetti's aspect ratio to 1, call this function like below:
+
+```
+confetti.setSetting({confettiAspectRatio: 1});
+```
+
 `initialRadius`, `initialSpeed`, `gravity`, and `confettiSize`'s numbers are the ratio compared to canvas size.
 
 ## Contact

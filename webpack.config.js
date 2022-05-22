@@ -9,6 +9,7 @@ const main = {
         filename: 'web_confetti_min.js',
         library: 'Confetti',
         libraryTarget: 'var',
+        libraryExport: 'default',
         path: path.resolve(__dirname, 'dist'),
     }
 };
